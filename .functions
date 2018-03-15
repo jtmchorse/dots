@@ -1,0 +1,11 @@
+# Create a new directory and enter it
+function mk() {
+  mkdir -p "$@" && cd "$@"
+}
+
+#smartsheet.local
+function snapshot-db () {
+  gotoGains && drush sql-drop -y && gunzip -c `ls -t ~/Downloads/Smartsheet-201*.gz | head -1` | drush sql-cli &&  cat ~/workspace/www/scripts/local.sql | drush sqlc && drush cc all && drush user-login jmchorse 
+}
+
+echo 'functions'

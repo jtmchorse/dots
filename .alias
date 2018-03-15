@@ -1,7 +1,85 @@
 alias l="ls -la"
 alias ld="ls -ld */"   # List in long format, only directories
+alias ll='ls -alF'
+alias la='ls -A'
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-echo "hello world";
+#Workspaces
+alias gotoGains="cd ~/workspace/www/docroot/sites/all/themes/gainsboro/"
+alias gotoHelp="cd ~/workspace/help/docroot/themes/custom/avacyn"
+alias gotoTwenty="cd ~/workspace/www/docroot/sites/all/themes/twentytwenty/"
+alias gotoPageManager="cd ~/workspace/www/docroot/sites/all/modules/smartsheet_module/page_manager/ && subl ."
+alias gotoCommunity="cd ~/workspace/community/docroot/themes/custom/collective"
+alias gotoPhillip="cd ~/workspace/phillip/"
+alias gotoScratch="cd ~/workspace/scratch"
+alias openScratch="gotoScratch && subl ."
+
+#Funsies
+alias Vimrc="vim ~/.vimrc"
+alias RS="source ~/.bash_profile"
+alias Bpro="vim ~/.bash_profile"
+alias ALIAS="vim ~/.dots/.alias"
+alias ACQ="ssh-add ~/.ssh/acquia_rsa"
+
+
+#Apache
+alias RSA="service apache2 restart"
+
+#Git
+alias gs="git status"
+alias gpr="git pull --rebase"
+alias gau="git add ."
+alias gcd="git checkout develop"
+
+#Roadkit QMK
+#You need to make sure the raodkit//keeb is in boot mode, by hitting the reset key
+alias QMK="cd ~/Documents/qmk_firmware/"
+alias QMK1="sudo dfu-programmer atmega32u4 erase --force"
+alias QMK2="sudo dfu-programmer atmega32u4 flash .build/roadkit_singles.hex"
+alias QMK3="sudo dfu-programmer atmega32u4 reset"
+alias QMKRoadKit="QMK1 && QMK2 && QMK3"
+
+#The Van 44
+alias TV44="QMK"
+alias TV441="sudo dfu-programmer atmega32u4 erase --force"
+alias TV442="sudo dfu-programmer atmega32u4 flash .build/tv44_jtm_sea.hex"
+alias TV443="QMK3"
+alias FlashTheVan="TV441 && TV442 && TV443"
+
+#Panc 60
+alias Panc="QMK"
+alias Panc1="sudo dfu-programmer atmega32u4 erase --force"
+alias Panc2="sudo dfu-programmer atmega32u4 flash .build/gh60_jtm_sea.hex"
+alias Panc3="QMK3"
+alias FlashThePanc="Panc1 && Panc2 && Panc3"
+
+ #Obli
+ #You need to make sure the raodkit//keeb is in boot mode, by hitting the reset key
+ alias gotoObli="cd ~/Documents/obli-qmk/"
+ alias Obli1="sudo dfu-programmer atmega32u4 erase --force"
+ alias Obli2="sudo dfu-programmer atmega32u4 flash .build/obelus_jtm_sea.hex"
+ alias Obli3="sudo dfu-programmer atmega32u4 reset"
+ alias ObliFlash="Obli1 && Obli2 && Obli3"
+
+
+#Grunt
+alias gw="grunt watch"
+
+#Drush
+alias da="drush cc all"
+
+#Gulp
+alias gus="gulp sass"
+
+#Drupal Debug
+alias drupalDebug="vim /home/jt/workspace/www/docroot/sites/default/settings.local.php"
+
+#Get dem tmuxinator aliases
+source ~/.bin/tmuxinator.bash
+
+#For Giggles
+echo "alias loaded";
+

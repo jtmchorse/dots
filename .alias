@@ -10,12 +10,14 @@ alias ....="cd ../../.."
 #Workspaces
 alias gotoGains="cd ~/workspace/www/docroot/sites/all/themes/gainsboro/"
 alias gotoHelp="cd ~/workspace/help/docroot/themes/custom/avacyn"
+alias gotoAlexandria="cd ~/workspace/help/docroot/themes/custom/alexandria"
 alias gotoTwenty="cd ~/workspace/www/docroot/sites/all/themes/twentytwenty/"
 alias gotoPageManager="cd ~/workspace/www/docroot/sites/all/modules/smartsheet_module/page_manager/ && subl ."
 alias gotoCommunity="cd ~/workspace/community/docroot/themes/custom/collective"
 alias gotoPhillip="cd ~/workspace/phillip/"
 alias gotoScratch="cd ~/workspace/scratch"
 alias openScratch="gotoScratch && subl ."
+alias gotoDevelopers="cd ~/workspace/smartsheetdeveloper/docroot/themes/custom/aperture/"
 
 #Funsies
 alias Vimrc="vim ~/.vimrc"
@@ -33,6 +35,31 @@ alias gs="git status"
 alias gpr="git pull --rebase"
 alias gau="git add ."
 alias gcd="git checkout develop"
+function gi {
+  command=$@
+  git ${command:1}
+}
+function gcm {
+ git commit -m "$1"
+}
+function gc { 
+  local commitmessage
+  if [ "" = "$1" ]; then 
+    echo -n 'Commit message: '
+    commitmessage="$(ruby -e "puts gets")"
+    git commit -m "$commitmessage"
+  else
+    git commit -m "$1"
+  fi
+}
+
+#Dursh?
+function dursh {
+  drush $1
+}
+
+#Help Refreshes
+alias help-refresh="cd ~/workplace/help && help-refresh"
 
 #Roadkit QMK
 #You need to make sure the raodkit//keeb is in boot mode, by hitting the reset key

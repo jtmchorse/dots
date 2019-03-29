@@ -12,12 +12,14 @@ alias gotoGains="cd ~/workspace/www/docroot/sites/all/themes/gainsboro/"
 alias gotoHelp="cd ~/workspace/help/docroot/themes/custom/avacyn"
 alias gotoAlexandria="cd ~/workspace/help/docroot/themes/custom/alexandria"
 alias gotoTwenty="cd ~/workspace/www/docroot/sites/all/themes/twentytwenty/"
+alias gotoWD8="cd ~/workspace/www-d8/docroot/"
 alias gotoPageManager="cd ~/workspace/www/docroot/sites/all/modules/smartsheet_module/page_manager/ && subl ."
 alias gotoCommunity="cd ~/workspace/community/docroot/themes/custom/collective"
 alias gotoPhillip="cd ~/workspace/phillip/"
 alias gotoScratch="cd ~/workspace/scratch"
 alias openScratch="gotoScratch && subl ."
 alias gotoDevelopers="cd ~/workspace/smartsheetdeveloper/docroot/themes/custom/aperture/"
+alias patternLab="cd ~/workspace/www-d8/styleguide"
 
 #Funsies
 alias Vimrc="vim ~/.vimrc"
@@ -59,7 +61,7 @@ function dursh {
 }
 
 #Help Refreshes
-alias help-refresh="cd ~/workplace/help && help-refresh"
+alias help-refresh="cd ~/workspace/help/docroot/ && help-refresh"
 
 #Roadkit QMK
 #You need to make sure the raodkit//keeb is in boot mode, by hitting the reset key
@@ -101,12 +103,17 @@ alias da="drush cc all"
 #Gulp
 alias gus="gulp sass"
 
+#Yarn..
+alias ys="yarn serve"
+
 #Drupal Debug
 alias drupalDebug="vim /home/jt/workspace/www/docroot/sites/default/settings.local.php"
 
 #Get dem tmuxinator aliases
-source ~/.bin/tmuxinator.bash
+#source ~/.bin/tmuxinator.bash
+#Vbox
+echo "don't forget to vbox mount(mountVboxFolder)";
+alias mountVboxFolder="sudo mount -t vboxsf GUEST-OS /home/jt/GUEST-OS/"
 
 #For Giggles
 echo "alias loaded";
-
